@@ -1,7 +1,8 @@
 # SRCNN
+The goal of this project is to upscale and improve the quality of low resolution images.
 
-This repository is implementation of the ["Image Super-Resolution Using Deep Convolutional Networks"](https://arxiv.org/abs/1501.00092).
 Resources used: 
+["Image Super-Resolution Using Deep Convolutional Networks"](https://arxiv.org/abs/1501.00092).
 https://arxiv.org/pdf/1809.00219v2.pdf
 https://arxiv.org/abs/2107.10833
 https://www.youtube.com/watch?v=fxHWoDSSvSc
