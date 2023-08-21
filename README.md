@@ -4,19 +4,6 @@ This repository is implementation of the ["Image Super-Resolution Using Deep Con
 
 <center><img src="./thumbnails/fig1.png"></center>
 
-## Differences from the original
-
-- Added the zero-padding
-- Used the Adam instead of the SGD
-- Removed the weights initialization
-
-## Requirements
-
-- PyTorch 1.0.0
-- Numpy 1.15.4
-- Pillow 5.4.1
-- h5py 2.8.0
-- tqdm 4.30.0
 
 ## Train
 
@@ -33,18 +20,6 @@ The 91-image, Set5 dataset converted to HDF5 can be downloaded from the links be
 
 Otherwise, you can use `prepare.py` to create custom dataset.
 
-```bash
-python train.py --train-file "BLAH_BLAH/91-image_x3.h5" \
-                --eval-file "BLAH_BLAH/Set5_x3.h5" \
-                --outputs-dir "BLAH_BLAH/outputs" \
-                --scale 3 \
-                --lr 1e-4 \
-                --batch-size 16 \
-                --num-epochs 400 \
-                --num-workers 8 \
-                --seed 123                
-```
-
 ## Test
 
 Pre-trained weights can be downloaded from the links below.
@@ -56,12 +31,6 @@ Pre-trained weights can be downloaded from the links below.
 | 9-5-5 | 4 | [Download](https://www.dropbox.com/s/pd5b2ketm0oamhj/srcnn_x4.pth?dl=0) |
 
 The results are stored in the same path as the query image.
-
-```bash
-python test.py --weights-file "BLAH_BLAH/srcnn_x3.pth" \
-               --image-file "data/butterfly_GT.bmp" \
-               --scale 3
-```
 
 ## Results
 
@@ -94,36 +63,14 @@ PSNR was calculated on the Y channel.
     		<center><img src="./data/butterfly_GT_srcnn_x3.bmp"></center>
     	</td>
     </tr>
-    <tr>
-        <td><center>Original</center></td>
-        <td><center>BICUBIC x3</center></td>
-        <td><center>SRCNN x3 (29.30 dB)</center></td>
-    </tr>
-    <tr>
-    	<td>
-    		<center><img src="./data/zebra.bmp""></center>
-    	</td>
-    	<td>
-    		<center><img src="./data/zebra_bicubic_x3.bmp"></center>
-    	</td>
-    	<td>
-    		<center><img src="./data/zebra_srcnn_x3.bmp"></center>
-    	</td>
-    </tr>
-    <tr>
-        <td><center>Original</center></td>
-        <td><center>BICUBIC x3</center></td>
-        <td><center>SRCNN x3 (28.58 dB)</center></td>
-    </tr>
-    <tr>
-    	<td>
-    		<center><img src="./data/ppt3.bmp""></center>
-    	</td>
-    	<td>
-    		<center><img src="./data/ppt3_bicubic_x3.bmp"></center>
-    	</td>
-    	<td>
-    		<center><img src="./data/ppt3_srcnn_x3.bmp"></center>
-    	</td>
-    </tr>
+ 
 </table>
+
+
+## Requirements
+
+- PyTorch 1.0.0
+- Numpy 1.15.4
+- Pillow 5.4.1
+- h5py 2.8.0
+- tqdm 4.30.0
